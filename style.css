@@ -73,8 +73,136 @@ body {
   line-height: 164%;
   letter-spacing: 0;
 }
+
+.details {
+  /* padding: 78px 0 100px; */
+  padding: 30px 0 48px;
+  position: relative;
+}
 .details__container {
-  width: 1140px;
+  position: relative;
+  /* width: 1140px; */
+  width: 100vw;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.details__container::after {
+  content: "";
+  height: 1px;
+  background-color: #e6e6e6;
+  position: absolute;
+  bottom: -48px;
+  left: 20px;
+  right: 20px;
+}
+.details__list {
+  display: grid;
+  gap: 36px;
+  /* gap: 100px; */
+}
+
+.details__card {
+  display: grid;
+  align-items: center;
+  gap: 24px;
+}
+.details__card img {
+  width: 100%;
+}
+/* .details__card:nth-child(even) {
+  flex-direction: row-reverse;
+} */
+
+.details-card__content {
+  display: grid;
+  gap: 12px;
+  /* gap: 25px; */
+}
+.details-card__content h3 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: 22px;
+  line-height: 32px;
+}
+.details-card__content p {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-light);
+  font-size: 14px;
+  line-height: 22px;
+}
+.video {
+  padding: 48px 0 52px;
+}
+.video__container {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.video__container img {
+  display: block;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .details__container {
+    padding: 0 48px;
+  }
+  .details__container::after {
+    left: 48px;
+    right: 48px;
+  }
+  .details__list {
+    gap: 44px;
+  }
+  .details__card {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .details__card:nth-child(even) picture {
+    order: 2;
+  }
+  .details__card img {
+    max-width: 294px;
+  }
+  .video__container {
+    padding: 0 48px;
+  }
+}
+@media (min-width: 768px) {
+  .details {
+    padding: 40px 0 52px;
+  }
+  .details__container {
+    padding: 0 60px;
+  }
+  .details__container::after {
+    bottom: -52px;
+  }
+  .details__list {
+    gap: 52px;
+  }
+  .details__card {
+    /* width: 532px;
+    height: 355px; */
+    gap: 48px;
+  }
+  .details__card img {
+    max-width: none;
+  }
+  .details-card__content {
+    gap: 16px;
+  }
+  .details-card__content h3 {
+    font-size: 26px;
+    line-height: 36px;
+  }
+  .details-card__content p {
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .video {
+    padding: 56px 0 72px;
+  }
 }
 @media (min-width: 1024px) {
   .header__container {
@@ -99,6 +227,56 @@ body {
     margin: 0 auto;
     padding: 147.5px 0 97.5px;
   }
+  .details {
+    padding: 56px 0 72px;
+  }
+  .details__container {
+    padding: 0;
+    width: 960px;
+  }
+  .details__container::after {
+    left: 0;
+    right: 0;
+    bottom: -72px;
+  }
+  .details__list {
+    gap: 72px;
+  }
+  .details__card {
+    display: flex;
+    gap: 66px;
+  }
+  /* .details__card:nth-child(even) {
+    flex-direction: row-reverse;
+  } */
+  .details__card img {
+    width: 532px;
+    height: 355px;
+  }
+  .details__card:has(h3) {
+    gap: 88px;
+  }
+  .details__card:has(h3) img {
+    height: 545px;
+  }
+  .details-card__content {
+    gap: 20px;
+  }
+  .details-card__content h3 {
+    font-size: 34px;
+    line-height: 48px;
+  }
+  .details-card__content p {
+    font-size: 19px;
+    line-height: 28px;
+  }
+  .video {
+    padding: 68px 0 80px;
+  }
+  .video__container {
+    padding: 0;
+    width: 960px;
+  }
 }
 @media (min-width: 1451px) {
   .header__container {
@@ -110,5 +288,35 @@ body {
     width: 1191px;
     margin: 0 auto;
     padding: 147.5px 0 97.5px;
+  }
+
+  .details {
+    padding: 78px 0 100px;
+  }
+  .details__container {
+    width: 1140px;
+  }
+  .details__container::after {
+    bottom: -100px;
+  }
+  .details__list {
+    gap: 100px;
+  }
+  .details-card__content {
+    gap: 25px;
+  }
+  .details-card__content h3 {
+    font-size: 43px;
+    line-height: 60px;
+  }
+  .details-card__content p {
+    font-size: 24px;
+    line-height: 35px;
+  }
+  .video {
+    padding: 100px 0 139px;
+  }
+  .video__container {
+    width: 1140px;
   }
 }
