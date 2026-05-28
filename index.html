@@ -13,17 +13,17 @@
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body class="body">
     <header class="header">
       <div class="header__container">
         <div class=""><img src="./assets/logo.svg" alt="logo" /></div>
         <div class="header-navigation-content">
           <nav class="header-navigation">
             <ul class="header-navigation__list">
-              <li>Our Brand</li>
-              <li>Products</li>
-              <li>Contact</li>
-              <li>Downloads</li>
+              <li><a href="#">Our Brand</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Downloads</a></li>
             </ul>
           </nav>
           <ul class="header__filter">
@@ -38,6 +38,14 @@
               </button>
             </li>
           </ul>
+        </div>
+        <div class="burger-menu">
+          <input type="checkbox" id="burger-menu" />
+          <label class="burger-menu__button" for="burger-menu">
+            <span class="burger-menu__line burger-menu__line--upper"></span>
+            <span class="burger-menu__line burger-menu__line--center"></span>
+            <span class="burger-menu__line burger-menu__line--lower"></span>
+          </label>
         </div>
       </div>
     </header>
@@ -58,7 +66,7 @@
         </div>
       </section>
       <section class="details">
-        <div class="details__container">
+        <div class="container details__container">
           <ul class="details__list">
             <li class="details__card">
               <picture>
@@ -145,7 +153,7 @@
         </div>
       </section>
       <section class="video">
-        <div class="video__container">
+        <div class="container video__container">
           <img
             src="./assets/video/video.png"
             alt="girl cooking in a bright kitchen"
@@ -153,7 +161,7 @@
         </div>
       </section>
       <section class="reviews">
-        <div class="reviews__container">
+        <div class="container reviews__container">
           <h2>
             Send us your review about our <br />
             products!
@@ -257,5 +265,15 @@
         </div>
       </div>
     </footer>
+    <div class="mobile-navigation">
+      <nav>
+        <ul class="mobile-navigation__list">
+          <li><a href="#">Our Brand</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Downloads</a></li>
+        </ul>
+      </nav>
+    </div>
   </body>
 </html>

@@ -38,6 +38,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   margin: 0 auto;
+  padding: 28px 20px;
 }
 .header-navigation {
   display: none;
@@ -45,9 +46,80 @@ body {
 .header__filter {
   display: none;
 }
+.burger-menu {
+  padding: 19.5px 15px;
+  border-radius: 50%;
+  background-color: #ffffff20;
+}
+.burger-menu input {
+  display: none;
+}
+.burger-menu__line {
+  display: block;
+  width: 24px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.burger-menu__line--lower {
+  transform: translateY(4px);
+}
+.burger-menu__line--upper {
+  transform: translateY(-4px);
+}
+.burger-menu:has(input:checked) .burger-menu__line--center {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.burger-menu:has(input:checked) .burger-menu__button {
+  transform: translateX(3px);
+}
+.burger-menu:has(input:checked) .burger-menu__line--upper {
+  transform: rotate(45deg) translateY(4px) translateX(4px);
+}
+.burger-menu:has(input:checked) .burger-menu__line--lower {
+  transform: rotate(-45deg) translateY(-3px) translateX(3px);
+}
+.mobile-navigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  background-color: #fff;
+  transition: all 0.5s ease-in;
+  display: grid;
+  align-items: center;
+}
+
+body:has(.burger-menu input:checked) .mobile-navigation {
+  left: 0;
+}
+body:has(.burger-menu input:checked) {
+  overflow: hidden;
+}
+.mobile-navigation__list {
+  display: grid;
+
+  gap: 40px;
+}
+body:has(.burger-menu input:checked) .mobile-navigation__list {
+  display: grid;
+}
+.mobile-navigation__list li {
+  text-align: center;
+}
+.mobile-navigation__list li a {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: x-large;
+  color: var(--color-bg);
+}
 .hero {
   height: 100vh;
-  background-position-x: -1548px;
+  background-position-x: -1100px;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("./assets/hero/hero.jpg");
@@ -59,18 +131,29 @@ body {
 }
 .hero__wrapper {
   background-color: #33333363;
+  height: 100%;
+}
+.hero__container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 28px 20px;
+}
+.hero__content {
+  display: grid;
+  gap: 18px;
 }
 .hero h2 {
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-bold);
-  font-size: 24px;
+  font-size: 54px;
   line-height: 32px;
   letter-spacing: 0;
 }
 .hero p {
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-regular);
-  font-size: 14px;
+  font-size: 22px;
   line-height: 137%;
   letter-spacing: 0;
 }
@@ -252,17 +335,11 @@ body {
     width: 70%;
     padding: 90px 50px 60px;
   }
-  .hero {
-    background-position-x: -1432px;
-  }
   .hero h2 {
-    font-size: 30px;
     line-height: 38px;
   }
 
-  .details__container,
-  .video__container,
-  .reviews__container {
+  .container {
     padding: 0 48px;
   }
   .details__container::after {
@@ -302,13 +379,15 @@ body {
 }
 @media (min-width: 768px) {
   .header__container {
-    padding: 20px 50px;
+    padding: 14px 50px;
   }
   .hero {
     background-position-x: center;
     height: auto;
   }
   .hero__container {
+    transform: translateY(0);
+    position: static;
     width: 55%;
     padding: 90px 50px 60px;
   }
@@ -322,10 +401,7 @@ body {
   .details {
     padding: 40px 0 52px;
   }
-  .details__container,
-  .video__container,
-  .reviews__container,
-  .footer__container {
+  .container .footer__container {
     padding: 0 60px;
   }
   .details__container::after {
@@ -363,6 +439,12 @@ body {
   }
 }
 @media (min-width: 1024px) {
+  .container,
+  .footer__container {
+    margin: 0 auto;
+    padding: 0;
+    width: 960px;
+  }
   .header__container {
     width: 960px;
     padding: 26px 0;
@@ -418,15 +500,17 @@ body {
     background-color: #ffffff20;
     padding: 5px 6.7px;
   }
+  .burger-menu,
+  .mobile-navigation {
+    display: none;
+  }
   .hero__container {
     width: 960px;
     margin: 0 auto;
     padding: 147.5px 0 97.5px;
   }
   .hero__content {
-    display: grid;
     width: 558.91px;
-    gap: 18px;
   }
   .hero h2 {
     font-size: 44px;
@@ -435,14 +519,7 @@ body {
   .details {
     padding: 56px 0 72px;
   }
-  .details__container,
-  .video__container,
-  .reviews__container,
-  .footer__container {
-    margin: 0 auto;
-    padding: 0;
-    width: 960px;
-  }
+
   .details__container::after {
     left: 0;
     right: 0;
@@ -478,10 +555,6 @@ body {
   }
   .video {
     padding: 68px 0 80px;
-  }
-  .video__container {
-    padding: 0;
-    width: 960px;
   }
   .reviews__container h2 {
     font-size: 28px;
