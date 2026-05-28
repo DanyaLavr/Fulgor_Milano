@@ -124,13 +124,12 @@ body:has(.burger-menu input:checked) .mobile-navigation__list {
   gap: 20px;
 }
 .mobile-navigation__filter:has(li form) {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  /* gap: 20px; */
+  display: flex;
+  flex-wrap: wrap;
   padding: 0 20px;
 }
 .mobile-search-item {
-  grid-column: 1;
+  flex: 1;
 }
 
 .mobile-navigation__filter button {
