@@ -212,10 +212,35 @@ body:has(.burger-menu input:checked) .mobile-navigation__list {
 .video__container {
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
 }
-.video__container img {
+.video__content {
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: 12px;
+  border: 1px solid #ffffff20;
+}
+.video__button {
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: inherit;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  aspect-ratio: 1;
+}
+
+.video__button img {
   display: block;
   width: 100%;
+  opacity: 0.8;
+}
+.video__container:hover img {
+  opacity: 0.8 !important;
 }
 .reviews {
   background-position: center;
@@ -555,6 +580,9 @@ body:has(.burger-menu input:checked) .mobile-navigation__list {
   }
   .video {
     padding: 68px 0 80px;
+  }
+  .video__button {
+    width: 108px;
   }
   .reviews__container h2 {
     font-size: 28px;
